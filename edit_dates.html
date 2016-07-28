@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<html lang="de">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="css/lib/bootstrap.css" rel="stylesheet">
+    <link href="css/lib/normalize.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,300" rel="stylesheet" type="text/css">
+    <!-- javascript files -->
+    <script src="js/lib/jquery.min.js"></script>
+    <script src="js/edit_dates.js"></script>
+    <script src="js/lib/bootstrap.min.js"></script>
+    <script src="js/lib/smooth-scroll.min.js"></script>
+    <script src="js/lib/mail.js"></script>
+
+  </head>
+
+  <body id="dates">
+    <div class="container" >
+      
+      <div class="col-sm-12 table-responsive">
+        <h1>Tour Termine</h1>
+
+        <div class="col-sm-3"><img src="img/19097_Netzwertage_OWL_logo.jpg" class="img-responsive" /></div>
+          <div class="col-sm-9">
+            <p>
+              Vom 22. bis zum 23.November 2016 öffnen die Netzwerktage OWL im Messezentrum Bad Salzuflen erstmalig ihre Türen. Die 2-tägige Messe und Kongressveranstaltung bietet der regionalen Wirtschaft eine Netzwerkplattform um neue Kontakte zu generieren, Produkte und Dienstleistungen zu präsentieren und Synergien zu finden, die Ihr Unternehmen weiter voranbringt!
+            </p>
+          </div>
+
+        
+        <table id="dates-table" class="table">
+          <thead>
+            <tr>
+              <td>
+                <strong>DATUM</strong>
+              </td>
+              <td>
+                <strong>UHRZEIT</strong>
+              </td>
+              <td>
+                <strong>THEATER</strong>
+              </td>
+              <td>
+                <strong>ORT</strong>
+              </td>
+              <td>
+                <strong>PROGRAMM</strong>
+              </td>
+              <td>
+                <strong>TICKETS</strong>
+              </td>
+              <td>
+            </tr>
+          </thead>
+          <tbody>
+          
+            
+          </tbody>
+        </table>
+
+        <a href="#" id="new-date-btn" class="btn btn-lg btn-default" data-toggle="modal" data-target="#new-date-modal">Neuer Termin</a>
+      </div>
+      <div id="new-date-modal" class="modal fade">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Neuer Termin</h4>
+            </div>
+            <div class="modal-body">
+              <form class="form-horizontal">
+                <div class="form-group">
+                  <label for="date" class="col-sm-2 control-label">Datum</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="date" placeholder="Datum in der Form: Tag, Datum">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="time" class="col-sm-2 control-label">Uhrzeit</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="time" placeholder="Uhrzeit">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="location" class="col-sm-2 control-label">Theater</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="location" placeholder="Theater">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="town" class="col-sm-2 control-label">Ort</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="town" placeholder="Ort">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="program" class="col-sm-2 control-label">Programm</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="program" placeholder="Programm">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="tickets" class="col-sm-2 control-label">Tickets</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="tickets" placeholder="Link zum Anbieter in der Form: http://link_zum_anbieter.de">
+                  </div>
+                </div>
+                
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button id="add-date" type="button" class="btn btn-primary">Termin hinzufügen</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
+      <a href="#" id="save-btn" class="btn btn-lg btn-default">Änderungen speichen</a>
+
+      <div id="login-modal" data-backdrop="static" class="modal fade">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Login</h4>
+            </div>
+            <div class="modal-body">
+              <div class="alert alert-danger" role="alert">Die Benutzname und das Passwort, die Sie eingegeben haben, stimmen nicht überein</div>
+              <form class="form-horizontal">
+                <div class="form-group">
+                  <label for="username" class="col-sm-2 control-label">Nutzername</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="username" placeholder="Nutzername">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="password" class="col-sm-2 control-label">Passwort</label>
+                  <div class="col-sm-10">
+                    <input type="password" class="form-control" id="password" placeholder="Passwort">
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button id="login-btn" type="button" class="btn btn-primary">Anmelden</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+    </div>
+  </body>
+
+</html>
